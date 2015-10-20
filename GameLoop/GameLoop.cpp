@@ -18,10 +18,22 @@ void GameLoop::SetCell(int ID, GRID_TYPE Type) {
     theGrid[ID] = Type;
 }
 
+void ResetGrid(){
+    for(int i = 0; i < theGrid.size() ; i++){
+        theGrid[i] = GRID_TYPE_NONE;
+    }
+}
 void GameLoop::OnLoop()
 {
-
-
+    bool gridFull = true;
+    for(int i = 0; i < theGrid.size() ; i++){
+        if(theGrid[i] == GRID_TYPE_NONE){
+            gridFull = false;
+        }
+    }
+    if(gridFull){
+        ResetGrid();
+    }
 
 }
 void GameLoop::OnRender()
