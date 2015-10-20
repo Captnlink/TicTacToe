@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Ti-Tac-Toe" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Test" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Test" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="D:/IDE/CodeBlocks/SDL/SDL2/include/SDL2" />
+		</Compiler>
+		<Linker>
+			<Add option="-lmingw32 -lSDL2main -lSDL2" />
+			<Add directory="D:/IDE/CodeBlocks/SDL/SDL2/lib" />
+		</Linker>
+		<Unit filename="Define.h" />
+		<Unit filename="EventHandler/EventHandlerAbstract.cpp" />
+		<Unit filename="EventHandler/EventHandlerAbstract.h" />
+		<Unit filename="GameLoop/GameLoop.cpp" />
+		<Unit filename="GameLoop/GameLoop.h" />
+		<Unit filename="GameLoop/GameLoop_EventHandler.cpp" />
+		<Unit filename="GameLoop/GameLoop_Init.cpp" />
+		<Unit filename="Surfaces_Textures/CSurface.cpp" />
+		<Unit filename="Surfaces_Textures/CSurface.h" />
+		<Unit filename="Surfaces_Textures/CTexture.cpp" />
+		<Unit filename="Surfaces_Textures/CTexture.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
