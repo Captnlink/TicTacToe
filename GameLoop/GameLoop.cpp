@@ -18,7 +18,7 @@ void GameLoop::SetCell(int ID, GRID_TYPE Type) {
     theGrid[ID] = Type;
 }
 
-void ResetGrid(){
+void GameLoop::ResetGrid(){
     for(int i = 0; i < theGrid.size() ; i++){
         theGrid[i] = GRID_TYPE_NONE;
     }
