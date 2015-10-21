@@ -24,6 +24,11 @@ void ResetGrid(){
     }
 }
 
+bool gameOver(const vector<GRID_TYPE>* grid){
+    if(whoWins(grid)==PLAYER_NONE) return false;
+    else return true;
+}
+
 tPlayer whoWins(const vector<GRID_TYPE> *grid{
     tPlayer winner = PLAYER_NONE;
     for(int i = 0; i < 3; i++){
