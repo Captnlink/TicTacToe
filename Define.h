@@ -17,7 +17,7 @@ using namespace std;
 #define SCREEN_HEIGHT 600
 #define TILE_SIZE 200
 
-enum { PLAYER_X, PLAYER_O };
+enum tPlayer { PLAYER_NONE, PLAYER_X, PLAYER_O };
 
 enum GRID_TYPE {
     GRID_TYPE_NONE = 0,
