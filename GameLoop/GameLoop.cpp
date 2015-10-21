@@ -7,7 +7,7 @@ GameLoop::GameLoop()
     SDL_Window*     window = NULL;
     SDL_Renderer*   renderer = NULL;
     SDL_Texture*    Texture_Grid = NULL, *Texture_X = NULL, *Texture_O = NULL;
-    int             playerTurn = PLAYER_X;
+    tPlayer         playerTurn = PLAYER_X;
     vector<GRID_TYPE>     theGrid;
 }
 
@@ -18,35 +18,58 @@ void GameLoop::SetCell(int ID, GRID_TYPE Type) {
     theGrid[ID] = Type;
 }
 
-void GameLoop::OnLoop()
-{
-
-
-
+void GameLoop::ResetGrid(vector<GRID_TYPE>* grid){
+    for(int i = 0; i < (*grid).size() ; i++){
+        (*grid).at(i) = GRID_TYPE_NONE;
+    }
 }
-void GameLoop::OnRender()
-{
-    //Clear screen
-    SDL_RenderClear( renderer );
 
-    //Render texture to screen
-    CTexture::OnDraw(renderer,Texture_Grid);
+bool GameLoop::gameOver(const vector<GRID_TYPE>* grid){
+    if(whoWins(grid)==PLAYER_NONE) {return false;}
+    else {return true;}
+}
 
-    for(int i = 0; i < 9; i++)
-    {
-        int X = (i % 3)*TILE_SIZE;
-        int Y = (i / 3)*TILE_SIZE;
-        if(theGrid[i] == GRID_TYPE_X)
-        {
-            CTexture::OnDraw(renderer,Texture_X,X,Y);
+tPlayer GameLoop::whoWins(const vector<GRID_TYPE> *grid){
+    tPlayer winner = PLAYER_NONE;
+    for(int i = 0; i < 3; i++){
+        if(((*grid)[3*i]== GRID_TYPE_X && (*grid)[3*i+1]== GRID_TYPE_X && (*grid)[3*i+2]== GRID_TYPE_X) ||
+            ((*grid)[i] == GRID_TYPE_X && (*grid)[3+i]  == GRID_TYPE_X && (*grid)[6+i]  == GRID_TYPE_X)){
+            winner=PLAYER_X;
         }
-        else if(theGrid[i] == GRID_TYPE_O)
-        {
-            CTexture::OnDraw(renderer,Texture_O,X,Y);
+        else if(((*grid)[3*i]== GRID_TYPE_O && (*grid)[3*i+1]== GRID_TYPE_O && (*grid)[3*i+2]== GRID_TYPE_O) ||
+                ((*grid)[i]  == GRID_TYPE_O && (*grid)[3+i]  == GRID_TYPE_O && (*grid)[6+i]  == GRID_TYPE_O)){
+            winner=PLAYER_O;
         }
     }
-    //Update screen
-    SDL_RenderPresent( renderer );
+    if(((*grid)[0] == GRID_TYPE_X && (*grid)[4]== GRID_TYPE_X && (*grid)[8]== GRID_TYPE_X) ||
+        ((*grid)[2]== GRID_TYPE_X && (*grid)[4]== GRID_TYPE_X && (*grid)[6]== GRID_TYPE_X)){
+        winner=PLAYER_X;
+    }
+    else if(((*grid)[0]== GRID_TYPE_O && (*grid)[4]== GRID_TYPE_O && (*grid)[8]== GRID_TYPE_O) ||
+            ((*grid)[2]== GRID_TYPE_O && (*grid)[4]== GRID_TYPE_O && (*grid)[6]== GRID_TYPE_O)){
+        winner=PLAYER_O;
+    }
+    return winner;
+}
+void GameLoop::OnLoop()
+{
+    bool gridFull = true;
+    for(int i = 0; i < theGrid.size() ; i++){
+        if(theGrid[i] == GRID_TYPE_NONE){
+            gridFull = false;
+        }
+    }
+    if(gameOver(&theGrid)||gridFull){
+        if(whoWins(&theGrid)== PLAYER_X){
+            cout << "Player X won" <<endl;
+        }
+        else if (whoWins(&theGrid)== PLAYER_O){cout << "Player O won" <<endl;}
+        else cout << "Draw" << endl;
+        cout << "Reset must be done" << endl;
+        ResetGrid(&theGrid);
+        cout << "Reset done" << endl;
+    }
+
 }
 
 void GameLoop::OnCleanup()

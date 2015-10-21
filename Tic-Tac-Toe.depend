@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1445316127 source:e:\ide\github_shared\tictactoe\eventhandler\eventhandlerabstract.cpp
+	"EventHandlerAbstract.h"
+	"../GameLoop/GameLoop.h"
+
+1445316127 e:\ide\github_shared\tictactoe\eventhandler\eventhandlerabstract.h
+	"../Define.h"
+
+1445465437 e:\ide\github_shared\tictactoe\define.h
+	<stdio.h>
+	<string.h>
+	<SDL.h>
+	<SDL2/SDL_image.h>
+	<iostream>
+	<vector>
+
+1445467824 e:\ide\github_shared\tictactoe\gameloop\gameloop.h
+	"../Define.h"
+	"../EventHandler/EventHandlerAbstract.h"
+	"../Surfaces_Textures/CSurface.h"
+	"../Surfaces_Textures/CTexture.h"
+
+1445316335 e:\ide\github_shared\tictactoe\surfaces_textures\csurface.h
+	"../Define.h"
+
+1445316341 e:\ide\github_shared\tictactoe\surfaces_textures\ctexture.h
+	"../Define.h"
+
+1445469502 source:e:\ide\github_shared\tictactoe\gameloop\gameloop.cpp
+	"GameLoop.h"
+
+1445468600 source:e:\ide\github_shared\tictactoe\gameloop\gameloop_eventhandler.cpp
+	"GameLoop.h"
+
+1445470004 source:e:\ide\github_shared\tictactoe\gameloop\gameloop_init.cpp
+	"GameLoop.h"
+
+1445381865 source:e:\ide\github_shared\tictactoe\gameloop\gameloop_rendering.cpp
+	"GameLoop.h"
+
+1445303970 source:e:\ide\github_shared\tictactoe\surfaces_textures\csurface.cpp
+	"CSurface.h"
+
+1445304724 source:e:\ide\github_shared\tictactoe\surfaces_textures\ctexture.cpp
+	"CTexture.h"
+	"CSurface.h"
+

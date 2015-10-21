@@ -43,6 +43,7 @@
 		<Unit filename="GameLoop/GameLoop.h" />
 		<Unit filename="GameLoop/GameLoop_EventHandler.cpp" />
 		<Unit filename="GameLoop/GameLoop_Init.cpp" />
+		<Unit filename="GameLoop/GameLoop_Rendering.cpp" />
 		<Unit filename="Surfaces_Textures/CSurface.cpp" />
 		<Unit filename="Surfaces_Textures/CSurface.h" />
 		<Unit filename="Surfaces_Textures/CTexture.cpp" />

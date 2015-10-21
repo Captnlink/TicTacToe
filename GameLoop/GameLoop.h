@@ -13,7 +13,7 @@ class GameLoop : public EventHandlerAbstract{
         SDL_Renderer*   renderer;
         SDL_Texture*    Texture_Grid, *Texture_X, *Texture_O;
         int             playerTurn;                             //int to give the player turn PLAYER_START | PLAYER_X | PLAYER_O
-        vector<int>     theGrid;
+        vector<GRID_TYPE>     theGrid;
 
     public:
         GameLoop();
@@ -26,6 +26,9 @@ class GameLoop : public EventHandlerAbstract{
         void OnRender();
         void OnCleanup();
         void SetCell(int ID, GRID_TYPE Type);
+        void ResetGrid(vector<GRID_TYPE>* grid);
+        tPlayer whoWins(const vector<GRID_TYPE>* grid);
+        bool gameOver(const vector<GRID_TYPE>* grid);
         //Events
         void OnKeyDown(const Uint8* scancode);
         void OnMButtonDown(int x, int y);

@@ -28,9 +28,9 @@ void GameLoop::OnKeyDown(const Uint8* scancode)
     }
 }
 void GameLoop::OnMButtonDown(int x, int y){
-    cout << "Mouse Coordinate x : " << x << " y : " << y << endl;
+    //cout << "Mouse Coordinate x : " << x << " y : " << y << endl;
     int ID = (x/200) + ((y/200)*3);
-    cout << "ID : " << ID << endl;
+    //cout << "ID : " << ID << endl;
     if(playerTurn == PLAYER_X && theGrid[ID] == GRID_TYPE_NONE)
     {
         SetCell( ID, GRID_TYPE_X);

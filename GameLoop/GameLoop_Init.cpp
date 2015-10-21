@@ -41,8 +41,9 @@ bool GameLoop::OnInit()
     SDL_SetRenderDrawColor( renderer, 0xFF, 0xFF, 0xFF, 0xFF );
 
     CTexture texture_Image;
-    Texture_Grid = CTexture::OnLoad("Images\\Loading.bmp", renderer);
+    Texture_Grid = CTexture::OnLoad("Images\\Loading.png", renderer);
     CTexture::OnDraw(renderer,Texture_Grid,0,0,SCREEN_WIDTH,SCREEN_HEIGHT);
+    SDL_RenderPresent( renderer );
     SDL_DestroyTexture( Texture_Grid );
 
     //Loading Texture
@@ -69,6 +70,7 @@ bool GameLoop::OnInit()
     }
     else return false;
 
+    SDL_Delay(500);
     if(PRINT_DEBUG){cout << "Init End : NO_ERROR" << endl;}
     return true;
 }
