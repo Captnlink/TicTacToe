@@ -18,18 +18,18 @@ void GameLoop::SetCell(int ID, GRID_TYPE Type) {
     theGrid[ID] = Type;
 }
 
-void ResetGrid(){
+void GameLoop::ResetGrid(){
     for(int i = 0; i < theGrid.size() ; i++){
         theGrid[i] = GRID_TYPE_NONE;
     }
 }
 
-bool gameOver(const vector<GRID_TYPE>* grid){
+bool GameLoop::gameOver(const vector<GRID_TYPE>* grid){
     if(whoWins(grid)==PLAYER_NONE) return false;
     else return true;
 }
 
-tPlayer whoWins(const vector<GRID_TYPE> *grid{
+tPlayer GameLoop::whoWins(const vector<GRID_TYPE> *grid{
     tPlayer winner = PLAYER_NONE;
     for(int i = 0; i < 3; i++){
         if(grid[3i]==grid[3i+1]==grid[3i+2]==GRID_TYPE_X ||
