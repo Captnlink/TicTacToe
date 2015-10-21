@@ -7,7 +7,7 @@ GameLoop::GameLoop()
     SDL_Window*     window = NULL;
     SDL_Renderer*   renderer = NULL;
     SDL_Texture*    Texture_Grid = NULL, *Texture_X = NULL, *Texture_O = NULL;
-    int             playerTurn = PLAYER_X;
+    tPlayer         playerTurn = PLAYER_X;
     vector<GRID_TYPE>     theGrid;
 }
 
@@ -22,6 +22,29 @@ void ResetGrid(){
     for(int i = 0; i < theGrid.size() ; i++){
         theGrid[i] = GRID_TYPE_NONE;
     }
+}
+
+tPlayer whoWins(const vector<GRID_TYPE> *grid{
+    tPlayer winner = PLAYER_NONE;
+    for(int i = 0; i < 3; i++){
+        if(grid[3i]==grid[3i+1]==grid[3i+2]==GRID_TYPE_X ||
+            grid[i]==grid[3+i]==grid[6+i]==GRID_TYPE_X){
+            winner=PLAYER_X;
+        }
+        else if(grid[3i]==grid[3i+1]==grid[3i+2]==GRID_TYPE_O ||
+            grid[i]==grid[3+i]==grid[6+i]==GRID_TYPE_O){
+            winner=PLAYER_O;
+        }
+    }
+    if(grid[0]==grid[4]==grid[8]==GRID_TYPE_X ||
+        grid[2]==grid[4]==grid[6]==GRID_TYPE_X){
+        winner=PLAYER_X;
+    }
+    else if(grid[0]==grid[4]==grid[8]==GRID_TYPE_O ||
+        grid[2]==grid[4]==grid[6]==GRID_TYPE_O){
+        winner=PLAYER_O;
+    }
+    return winner;
 }
 void GameLoop::OnLoop()
 {
