@@ -27,6 +27,7 @@ class GameLoop : public EventHandlerAbstract{
         void OnCleanup();
         void SetCell(int ID, GRID_TYPE Type);
         void ResetGrid();
+        void whoWins();
         //Events
         void OnKeyDown(const Uint8* scancode);
         void OnMButtonDown(int x, int y);
