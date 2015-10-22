@@ -100,8 +100,8 @@ bool CTexture::OnDraw(SDL_Renderer* renderer, SDL_Texture* Texture, int x, int y
 * @param srcRect.y The y coordinate of top left corner
 * @param srcRect.w The width of the texture to draw
 * @param srcRect.h The height of the texture to draw
-* @param srcRect.x The x coordinate of top left corner on the window
-* @param srcRect.y The y coordinate of top left corner on the window
+* @param destRect.x The x coordinate of top left corner on the window
+* @param destRect.y The y coordinate of top left corner on the window
 * @param destRect.w The width of the texture on the window
 * @param destRect.h The height of the texture on the window
 */
