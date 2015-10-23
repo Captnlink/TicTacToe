@@ -6,13 +6,13 @@ This is my projet of the tic-tac-toe tutorial of SDL
 TODO : 
 Game
 - Draw victory lines, render with angles.
-- Wait 'til start new game to reset grid.
+√ Wait 'til start new game to reset grid. 
 - Show Player turn.
 - Show game time.
 - Selection with keybaord
 
 Menu
-- In game menu -> New game, Save, Load, credits.
+- In game menu -> √New game, Save, Load, credits.
 - Option -> Key Binding
 
 Upgrade to Super TTT
