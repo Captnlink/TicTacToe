@@ -6,8 +6,10 @@ GameLoop::GameLoop()
     Running = true;
     SDL_Window*     window = NULL;
     SDL_Renderer*   renderer = NULL;
-    SDL_Texture*    Texture_Grid = NULL, *Texture_X = NULL, *Texture_O = NULL;
-    tPlayer         playerTurn = PLAYER_X;
+    SDL_Texture*    Texture_Grid = NULL, *Texture_X = NULL, *Texture_O = NULL, *Texture_Menu= NULL, *Texture_Background= NULL;
+    SDL_Texture*    Texture_Line = NULL;
+    tPlayer         playerTurn = PLAYER_NONE;
+    SDL_Rect        gridRect, menuRect, tokenRect, lineRect;
     vector<GRID_TYPE>     theGrid;
 }
 
@@ -51,6 +53,27 @@ tPlayer GameLoop::whoWins(const vector<GRID_TYPE> *grid){
     }
     return winner;
 }
+
+int GameLoop::IDWins(const vector<GRID_TYPE> *grid)
+{
+    int IDwin = -1;
+    //Horizontal
+    if      ((*grid)[0]!= GRID_TYPE_NONE && (*grid)[1]!= GRID_TYPE_NONE && (*grid)[2]!= GRID_TYPE_NONE) int IDwin = 0;
+    else if ((*grid)[3]!= GRID_TYPE_NONE && (*grid)[4]!= GRID_TYPE_NONE && (*grid)[5]!= GRID_TYPE_NONE) int IDwin = 1;
+    else if ((*grid)[6]!= GRID_TYPE_NONE && (*grid)[7]!= GRID_TYPE_NONE && (*grid)[8]!= GRID_TYPE_NONE) int IDwin = 2;
+
+    //Vertical
+    else if ((*grid)[0]!= GRID_TYPE_NONE && (*grid)[3]!= GRID_TYPE_NONE && (*grid)[6]!= GRID_TYPE_NONE) int IDwin = 3;
+    else if ((*grid)[1]!= GRID_TYPE_NONE && (*grid)[4]!= GRID_TYPE_NONE && (*grid)[7]!= GRID_TYPE_NONE) int IDwin = 4;
+    else if ((*grid)[2]!= GRID_TYPE_NONE && (*grid)[5]!= GRID_TYPE_NONE && (*grid)[8]!= GRID_TYPE_NONE) int IDwin = 5;
+
+    //Diagonal
+    else if ((*grid)[3]!= GRID_TYPE_NONE && (*grid)[4]!= GRID_TYPE_NONE && (*grid)[5]!= GRID_TYPE_NONE) int IDwin = 6;
+    else if ((*grid)[3]!= GRID_TYPE_NONE && (*grid)[4]!= GRID_TYPE_NONE && (*grid)[5]!= GRID_TYPE_NONE) int IDwin = 7;
+
+    return IDwin;
+}
+
 void GameLoop::OnLoop()
 {
     bool gridFull = true;
@@ -59,15 +82,33 @@ void GameLoop::OnLoop()
             gridFull = false;
         }
     }
+
     if(gameOver(&theGrid)||gridFull){
         if(whoWins(&theGrid)== PLAYER_X){
             cout << "Player X won" <<endl;
         }
-        else if (whoWins(&theGrid)== PLAYER_O){cout << "Player O won" <<endl;}
+        else if (whoWins(&theGrid)== PLAYER_O)
+        {
+            cout << "Player O won" <<endl;
+        }
+
         else cout << "Draw" << endl;
+        cout << "Paul Win!! :P" << endl;
         cout << "Reset must be done" << endl;
-        ResetGrid(&theGrid);
-        cout << "Reset done" << endl;
+
+        //Place line
+        int winID = IDWins(&theGrid);
+        if(winID == 0||1||2){
+            lineRect.x = TILE_SIZE/2 + OFFSETX;
+            lineRect.y = winID*TILE_SIZE/2 + OFFSETY;
+        }
+        if(winID == 3||4||5){
+            lineRect.x = winID*TILE_SIZE/2 + OFFSETX;
+            lineRect.y = TILE_SIZE/2 + OFFSETY;
+        }
+
+        //Disable placement of marks
+
     }
 
 }
@@ -78,9 +119,13 @@ void GameLoop::OnCleanup()
     SDL_DestroyTexture( Texture_Grid );
     SDL_DestroyTexture( Texture_X );
     SDL_DestroyTexture( Texture_O );
-    Texture_Grid    = NULL;
-    Texture_X       = NULL;
-    Texture_O       = NULL;
+    SDL_DestroyTexture( Texture_Menu );
+    SDL_DestroyTexture( Texture_Background );
+    Texture_Grid        = NULL;
+    Texture_X           = NULL;
+    Texture_O           = NULL;
+    Texture_Menu        = NULL;
+    Texture_Background  = NULL;
 
     //Destroy window
     SDL_DestroyRenderer( renderer );

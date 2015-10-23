@@ -12,10 +12,13 @@ using namespace std;
 
 #define PRINT_DEBUG true
 
-#define WINDOW_TITLE "SDL Tutorial"
-#define SCREEN_WIDTH 600
-#define SCREEN_HEIGHT 600
-#define TILE_SIZE 200
+#define WINDOW_TITLE "Ultimate TTT"
+#define SCREEN_WIDTH 800
+#define SCREEN_HEIGHT 550
+#define GRID_WIDTH 450
+#define TILE_SIZE 150
+#define OFFSETX 325
+#define OFFSETY 50
 
 enum tPlayer { PLAYER_NONE, PLAYER_X, PLAYER_O };
 
@@ -24,4 +27,13 @@ enum GRID_TYPE {
     GRID_TYPE_X,
     GRID_TYPE_O
 };
+
+
+//Position of impoted files
+//MenuUI
+
+
+
+
+
 #endif
