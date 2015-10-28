@@ -13,6 +13,7 @@ class GameLoop : public EventHandlerAbstract{
         SDL_Renderer*   renderer;
         SDL_Texture*    Texture_Grid, *Texture_X, *Texture_O, *Texture_Menu, *Texture_Background;
         SDL_Texture*    Texture_Line;
+        SDL_Surface*    icon_loaded;
         SDL_Rect       gridRect, menuRect, tokenRect, lineRect;
         int             playerTurn;                             //int to give the player turn PLAYER_START | PLAYER_X | PLAYER_O
         vector<GRID_TYPE>     theGrid;

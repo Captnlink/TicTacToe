@@ -39,6 +39,9 @@ bool GameLoop::OnInit()
     SDL_RenderPresent( renderer );
     SDL_DestroyTexture( Texture_Grid );
 
+    icon_loaded = CSurface::OnLoad("Images\\icon.png");
+    SDL_SetWindowIcon(window, icon_loaded);
+
     //Loading Texture
     Texture_X =         CTexture::OnLoadTransparent("Images\\x.png", renderer, 0xFF, 0x00, 0xFF);
     Texture_O =         CTexture::OnLoadTransparent("Images\\o.png", renderer, 255, 0, 255);

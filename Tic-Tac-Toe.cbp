@@ -44,10 +44,14 @@
 		<Unit filename="GameLoop/GameLoop_EventHandler.cpp" />
 		<Unit filename="GameLoop/GameLoop_Init.cpp" />
 		<Unit filename="GameLoop/GameLoop_Rendering.cpp" />
+		<Unit filename="Images/icon.ico" />
 		<Unit filename="Surfaces_Textures/CSurface.cpp" />
 		<Unit filename="Surfaces_Textures/CSurface.h" />
 		<Unit filename="Surfaces_Textures/CTexture.cpp" />
 		<Unit filename="Surfaces_Textures/CTexture.h" />
+		<Unit filename="ressource.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -1,35 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="GameLoop\GameLoop.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="ressource.rc" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3871" topLine="39" />
+			<Cursor1 position="87" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="GameLoop\GameLoop.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="321" topLine="0" />
 		</Cursor>
 		<Folding>
-			<Collapse line="22" />
-			<Collapse line="28" />
-			<Collapse line="33" />
-			<Collapse line="57" />
+			<Collapse line="23" />
+			<Collapse line="29" />
+			<Collapse line="34" />
 		</Folding>
 	</File>
-	<File name="GameLoop\GameLoop.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="GameLoop\GameLoop.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="576" topLine="21" />
+			<Cursor1 position="550" topLine="5" />
 		</Cursor>
 	</File>
-	<File name="Surfaces_Textures\CTexture.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Surfaces_Textures\CTexture.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1662" topLine="47" />
+			<Cursor1 position="3851" topLine="107" />
 		</Cursor>
 	</File>
-	<File name="GameLoop\GameLoop_Init.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Surfaces_Textures\CTexture.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3090" topLine="64" />
+			<Cursor1 position="413" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="GameLoop\GameLoop_Rendering.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="GameLoop\GameLoop_Init.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="963" topLine="0" />
+			<Cursor1 position="2140" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="GameLoop\GameLoop_Rendering.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="936" topLine="27" />
+		</Cursor>
+	</File>
+	<File name="Surfaces_Textures\CSurface.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="222" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="GameLoop\GameLoop_EventHandler.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -37,9 +51,14 @@
 			<Cursor1 position="1038" topLine="21" />
 		</Cursor>
 	</File>
-	<File name="Define.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Define.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="357" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="Surfaces_Textures\CSurface.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="477" topLine="15" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

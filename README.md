@@ -3,6 +3,8 @@ First Game in C++ and SDL
 
 This is my projet of the tic-tac-toe tutorial of SDL
 
+For now I stopped working on this project 28/10/2015
+
 TODO : 
 Game
 - Draw victory lines, render with angles.

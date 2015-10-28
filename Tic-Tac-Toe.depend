@@ -14,7 +14,7 @@
 	<iostream>
 	<vector>
 
-1445581729 e:\ide\github_shared\tictactoe\gameloop\gameloop.h
+1446068680 e:\ide\github_shared\tictactoe\gameloop\gameloop.h
 	"../Define.h"
 	"../EventHandler/EventHandlerAbstract.h"
 	"../Surfaces_Textures/CSurface.h"
@@ -26,16 +26,16 @@
 1445633089 e:\ide\github_shared\tictactoe\surfaces_textures\ctexture.h
 	"../Define.h"
 
-1445634041 source:e:\ide\github_shared\tictactoe\gameloop\gameloop.cpp
+1446068680 source:e:\ide\github_shared\tictactoe\gameloop\gameloop.cpp
 	"GameLoop.h"
 
 1445580109 source:e:\ide\github_shared\tictactoe\gameloop\gameloop_eventhandler.cpp
 	"GameLoop.h"
 
-1445634615 source:e:\ide\github_shared\tictactoe\gameloop\gameloop_init.cpp
+1446070373 source:e:\ide\github_shared\tictactoe\gameloop\gameloop_init.cpp
 	"GameLoop.h"
 
-1445990828 source:e:\ide\github_shared\tictactoe\gameloop\gameloop_rendering.cpp
+1446066372 source:e:\ide\github_shared\tictactoe\gameloop\gameloop_rendering.cpp
 	"GameLoop.h"
 
 1445303970 source:e:\ide\github_shared\tictactoe\surfaces_textures\csurface.cpp
@@ -44,4 +44,6 @@
 1445633110 source:e:\ide\github_shared\tictactoe\surfaces_textures\ctexture.cpp
 	"CTexture.h"
 	"CSurface.h"
+
+1446070453 source:e:\ide\github_shared\tictactoe\ressource.rc
 
