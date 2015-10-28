@@ -47,13 +47,13 @@ SDL_Texture* CTexture::OnLoadTransparent(string path, SDL_Renderer* renderer, in
 * @param x2 The x coordinate to draw to
 * @param y2 The y coordinate to draw to
 */
-bool CTexture::OnDraw(SDL_Renderer* renderer, SDL_Texture* Texture,int x, int y) {
+bool CTexture::OnDraw(SDL_Renderer* renderer, SDL_Texture* Texture,int x, int y, int w, int h) {
     if(renderer == NULL || Texture == NULL) {
         return false;
     }
-    int w, h;
-	SDL_QueryTexture(Texture, NULL, NULL, &w, &h);
-
+    if(w == NULL) SDL_QueryTexture(Texture, NULL, NULL, &w, NULL);
+	if(h == NULL) SDL_QueryTexture(Texture, NULL, NULL, NULL, &h);
+    if(h == NULL && w == NULL) SDL_QueryTexture(Texture, NULL, NULL, &w, &h);
     SDL_Rect destRect;
     destRect.x = x;
     destRect.y = y;
@@ -75,7 +75,7 @@ bool CTexture::OnDraw(SDL_Renderer* renderer, SDL_Texture* Texture,int x, int y)
 * @param w The width of the texture to draw
 * @param h The height of the texture to draw
 */
-bool CTexture::OnDraw(SDL_Renderer* renderer, SDL_Texture* Texture, int x, int y, int w, int h) {
+/*bool CTexture::OnDraw(SDL_Renderer* renderer, SDL_Texture* Texture, int x, int y, int w, int h) {
     if(renderer == NULL || Texture == NULL) {
         return false;
     }
@@ -89,7 +89,7 @@ bool CTexture::OnDraw(SDL_Renderer* renderer, SDL_Texture* Texture, int x, int y
     SDL_RenderCopy( renderer, Texture,NULL, &destRect);
 
     return true;
-}
+}*/
 
 /**
 * Draw an SDL_Texture to an SDL_Renderer at position x, y
@@ -113,3 +113,13 @@ bool CTexture::OnDraw(SDL_Renderer* renderer, SDL_Texture* Texture, SDL_Rect* de
 
     return true;
 }
+
+bool CTexture::OnDrawAngle(SDL_Renderer* renderer, SDL_Texture* Texture, SDL_Rect* destRect,SDL_Rect* srcRect, double angle , SDL_Point* center, SDL_RendererFlip flip) {
+    if(renderer == NULL || Texture == NULL) {
+        return false;
+    }
+    SDL_RenderCopyEx( renderer, Texture,srcRect, destRect, angle, center, flip);
+
+    return true;
+}
+

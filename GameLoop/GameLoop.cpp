@@ -58,19 +58,19 @@ int GameLoop::IDWins(const vector<GRID_TYPE> *grid)
 {
     int IDwin = -1;
     //Horizontal
-    if      ((*grid)[0]!= GRID_TYPE_NONE && (*grid)[1]!= GRID_TYPE_NONE && (*grid)[2]!= GRID_TYPE_NONE) int IDwin = 0;
-    else if ((*grid)[3]!= GRID_TYPE_NONE && (*grid)[4]!= GRID_TYPE_NONE && (*grid)[5]!= GRID_TYPE_NONE) int IDwin = 1;
-    else if ((*grid)[6]!= GRID_TYPE_NONE && (*grid)[7]!= GRID_TYPE_NONE && (*grid)[8]!= GRID_TYPE_NONE) int IDwin = 2;
+    if      ((*grid)[0]!= GRID_TYPE_NONE && (*grid)[1]!= GRID_TYPE_NONE && (*grid)[2]!= GRID_TYPE_NONE) IDwin = 0;
+    else if ((*grid)[3]!= GRID_TYPE_NONE && (*grid)[4]!= GRID_TYPE_NONE && (*grid)[5]!= GRID_TYPE_NONE) IDwin = 1;
+    else if ((*grid)[6]!= GRID_TYPE_NONE && (*grid)[7]!= GRID_TYPE_NONE && (*grid)[8]!= GRID_TYPE_NONE) IDwin = 2;
 
     //Vertical
-    else if ((*grid)[0]!= GRID_TYPE_NONE && (*grid)[3]!= GRID_TYPE_NONE && (*grid)[6]!= GRID_TYPE_NONE) int IDwin = 3;
-    else if ((*grid)[1]!= GRID_TYPE_NONE && (*grid)[4]!= GRID_TYPE_NONE && (*grid)[7]!= GRID_TYPE_NONE) int IDwin = 4;
-    else if ((*grid)[2]!= GRID_TYPE_NONE && (*grid)[5]!= GRID_TYPE_NONE && (*grid)[8]!= GRID_TYPE_NONE) int IDwin = 5;
+    else if ((*grid)[0]!= GRID_TYPE_NONE && (*grid)[3]!= GRID_TYPE_NONE && (*grid)[6]!= GRID_TYPE_NONE) IDwin = 3;
+    else if ((*grid)[1]!= GRID_TYPE_NONE && (*grid)[4]!= GRID_TYPE_NONE && (*grid)[7]!= GRID_TYPE_NONE) IDwin = 4;
+    else if ((*grid)[2]!= GRID_TYPE_NONE && (*grid)[5]!= GRID_TYPE_NONE && (*grid)[8]!= GRID_TYPE_NONE) IDwin = 5;
 
     //Diagonal
-    else if ((*grid)[3]!= GRID_TYPE_NONE && (*grid)[4]!= GRID_TYPE_NONE && (*grid)[5]!= GRID_TYPE_NONE) int IDwin = 6;
-    else if ((*grid)[3]!= GRID_TYPE_NONE && (*grid)[4]!= GRID_TYPE_NONE && (*grid)[5]!= GRID_TYPE_NONE) int IDwin = 7;
-
+    else if ((*grid)[0]!= GRID_TYPE_NONE && (*grid)[4]!= GRID_TYPE_NONE && (*grid)[8]!= GRID_TYPE_NONE) IDwin = 6;
+    else if ((*grid)[2]!= GRID_TYPE_NONE && (*grid)[4]!= GRID_TYPE_NONE && (*grid)[6]!= GRID_TYPE_NONE) IDwin = 7;
+    else cout << "Grid Position not found ";
     return IDwin;
 }
 
@@ -85,27 +85,18 @@ void GameLoop::OnLoop()
 
     if(gameOver(&theGrid)||gridFull){
         if(whoWins(&theGrid)== PLAYER_X){
-            cout << "Player X won" <<endl;
+            //cout << "Player X won" <<endl;
         }
         else if (whoWins(&theGrid)== PLAYER_O)
         {
-            cout << "Player O won" <<endl;
+            //cout << "Player O won" <<endl;
         }
 
-        else cout << "Draw" << endl;
-        cout << "Paul Win!! :P" << endl;
-        cout << "Reset must be done" << endl;
+        //else cout << "Draw" << endl;
+        //cout << "Paul Win!! :P" << endl;
+        //cout << "Reset must be done" << endl;
 
         //Place line
-        int winID = IDWins(&theGrid);
-        if(winID == 0||1||2){
-            lineRect.x = TILE_SIZE/2 + OFFSETX;
-            lineRect.y = winID*TILE_SIZE/2 + OFFSETY;
-        }
-        if(winID == 3||4||5){
-            lineRect.x = winID*TILE_SIZE/2 + OFFSETX;
-            lineRect.y = TILE_SIZE/2 + OFFSETY;
-        }
 
         //Disable placement of marks
 

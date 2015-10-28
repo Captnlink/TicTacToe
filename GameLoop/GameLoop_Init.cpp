@@ -73,8 +73,10 @@ bool GameLoop::OnInit()
 
     int  h;
 	SDL_QueryTexture(Texture_Line, NULL, NULL, NULL, &h);
+	lineRect.x = 0;
+	lineRect.y = 0;
     lineRect.h = h;
-    lineRect.w = 2*TILE_SIZE;
+    lineRect.w = 2*TILE_SIZE + 2*TILE_SIZE/3;
 
     SDL_Delay(500);
     if(PRINT_DEBUG){cout << "Init End : NO_ERROR" << endl;}
